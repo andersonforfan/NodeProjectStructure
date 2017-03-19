@@ -1,9 +1,9 @@
 
 var mongoose = require('mongoose');
 
-var urlString = 'mongodb://localhost:27017/dbApi';
+var urlString = process.env.MONGODB_URL || 'mongodb://localhost:27017/dbApi';
 
-mongoose.connect(urlString, function(err, res){
+mongoose.connect(urlString, function(err, res) {
 
     if(err){
       console.log('Erro ao conectar');
